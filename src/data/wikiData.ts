@@ -64,28 +64,34 @@ export const GAME_INFO = {
 
 export const ACTIVE_CODES: CodeItem[] = [
   {
+    code: "UPDATE9.5",
+    rewards: "1x Heavenly Potion I, 5x Speed Potions, 5x Lucky Potions",
+    status: "active",
+    addedDate: "2026-08-27"
+  },
+  {
     code: "SUMMER2026",
     rewards: "1x Heavenly Potion II, 5x Fortuna Potions, 5,000 Coins",
     status: "active",
-    addedDate: "2026-08-20"
+    addedDate: "2026-08-27"
   },
   {
     code: "EON1.26",
     rewards: "10x Lucky Potions, 10x Speed Potions",
     status: "active",
-    addedDate: "2026-08-18"
+    addedDate: "2026-08-27"
   },
   {
     code: "SOVEREIGN",
     rewards: "2,500 Coins, 2x Coin Boost (15m)",
     status: "active",
-    addedDate: "2026-08-15"
+    addedDate: "2026-08-27"
   },
   {
     code: "SOLSRNG",
     rewards: "5x Lucky Potions Starter Pack",
     status: "active",
-    addedDate: "2026-08-10"
+    addedDate: "2026-08-27"
   }
 ];
 
