@@ -1,8 +1,10 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { Sparkles, Dices, Calculator, Trophy, Key, CloudSun, Shield, Copy, Check, ArrowRight, Zap, Flame, Crown } from 'lucide-react';
+import AuthorCard from '@/components/AuthorCard';
 import { GAME_INFO, ACTIVE_CODES, AURAS, FAQ_ITEMS } from '@/data/wikiData';
 
 export default function HomePage() {
@@ -67,6 +69,31 @@ export default function HomePage() {
 
   return (
     <div className="space-y-16 py-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto font-mono">
+      {/* FAQPage JSON-LD Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            dateModified: '2026-09-15',
+            author: {
+              '@type': 'Person',
+              name: 'Kaelen "Chrono" Void',
+              jobTitle: 'Lead RNG Statistician & Heavenly Potion Analyst',
+            },
+            mainEntity: FAQ_ITEMS.map((faq) => ({
+              '@type': 'Question',
+              name: faq.question,
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text: faq.answer,
+              },
+            })),
+          }),
+        }}
+      />
+
       {/* Hero Section */}
       <section className="relative overflow-hidden pt-12 pb-16 text-center space-y-8">
         <div className="absolute inset-0 -z-10 flex items-center justify-center">
@@ -118,6 +145,39 @@ export default function HomePage() {
           ))}
         </div>
       </section>
+
+      {/* AuthorCard Section */}
+      <AuthorCard />
+
+      {/* Visual Showcase */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
+        <div className="rounded-2xl overflow-hidden border border-purple-900/40 bg-[#080d19] p-4 flex flex-col items-center">
+          <Image
+            src="/images/sols-rng-hero.webp"
+            alt="Sol's RNG Roblox Live Game Arena"
+            width={640}
+            height={360}
+            className="rounded-xl object-cover w-full h-52 border border-purple-950"
+            priority
+          />
+          <p className="text-xs text-gray-400 mt-2 text-center font-sans">
+            Figure 1: Official Sol's RNG Live Realm — Biome atmospheric events & Stella's Cauldron.
+          </p>
+        </div>
+
+        <div className="rounded-2xl overflow-hidden border border-purple-900/40 bg-[#080d19] p-4 flex flex-col items-center">
+          <Image
+            src="/images/sols-rng-icon.webp"
+            alt="Sol's RNG Cosmic Particle Icon"
+            width={640}
+            height={360}
+            className="rounded-xl object-contain w-full h-52 bg-black/50 border border-purple-950"
+          />
+          <p className="text-xs text-gray-400 mt-2 text-center font-sans">
+            Figure 2: Official Sol's RNG Visual Emblem — Particle aura shaders and drop icons.
+          </p>
+        </div>
+      </div>
 
       {/* Feature Cards Grid */}
       <section className="space-y-6">
