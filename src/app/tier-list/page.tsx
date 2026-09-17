@@ -1,10 +1,18 @@
-'use client';
-
 import React from 'react';
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import { Trophy, Sparkles, Flame, Shield, Dices, Info, HelpCircle } from 'lucide-react';
 import { AURAS } from '@/data/wikiData';
 import AuthorCard from '@/components/AuthorCard';
+
+export const metadata: Metadata = {
+  title: "Sol's RNG Aura Tier List & Rarity Probabilities (September 2026)",
+  description: "Official Sol's RNG aura tier list ranking Divine, Transcendent, and Mythic auras by base roll rarity, native biome requirements, and cutscene visual effects.",
+  alternates: {
+    canonical: '/tier-list',
+  },
+  keywords: ["sol's rng tier list", "best aura in sol's rng", "sovereign roll chance", "archangel vs impeached"],
+};
 
 const TIER_LIST_FAQS = [
   {
@@ -42,16 +50,34 @@ export default function TierListPage() {
     'B': 'Core utility and early progression auras ranging from 1 in 1,000 to 1 in 99,999. While common for veteran rollers, keeping multiple copies in inventory is mandatory for glove blueprint recipes.'
   };
 
+  const itemListSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: "Sol's RNG Aura Tier List",
+    description: "Ranked list of all obtainable auras in Sol's RNG with base odds and biome requirements.",
+    numberOfItems: AURAS.length,
+    itemListElement: AURAS.map((a, idx) => ({
+      '@type': 'ListItem',
+      position: idx + 1,
+      name: a.name,
+      description: `${a.tier} tier aura with ${a.rarityFraction} roll odds. ${a.description}`,
+    })),
+  };
+
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10 font-mono">
-      {/* FAQ Schema */}
+      {/* Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'FAQPage',
-            dateModified: '2026-09-15',
+            dateModified: '2026-09-17',
             author: {
               '@type': 'Person',
               name: 'Kaelen "Chrono" Void',
@@ -71,53 +97,23 @@ export default function TierListPage() {
 
       {/* Header */}
       <div className="border-b border-purple-900/30 pb-6">
-        <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-amber-950/80 border border-amber-800/50 text-amber-300 text-xs font-bold mb-3">
-          <Trophy className="w-3.5 h-3.5 text-amber-400" />
-          <span>2026 OFFICIAL SOL'S RNG AURA RANKINGS • ERA 8.5 VERIFIED</span>
+        <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-purple-950/80 border border-purple-800/50 text-purple-300 text-xs font-bold mb-3">
+          <Trophy className="w-3.5 h-3.5 text-yellow-400" />
+          <span>OFFICIAL METAGAME RARITY CLASSIFICATION</span>
         </div>
         <h1 className="text-3xl sm:text-5xl font-black text-white tracking-tight">
-          Sol's RNG Aura Tier List & Rarity Matrix
+          Sol's RNG Aura Tier List & Base Odds
         </h1>
-        <p className="text-gray-400 text-sm mt-2 max-w-3xl leading-relaxed">
-          Comprehensive competitive tier rankings evaluated across four scientific dimensions: base fractional probability, Biome weather synergy, particle shader complexity, and crafting catalyst value at Stella's Cauldron.
+        <p className="text-gray-400 text-sm mt-1">
+          Complete breakdown of Divine, Transcendent, and Mythic auras ranked by statistical rarity, visual shader impact, and biome exclusivity (Updated September 2026).
         </p>
       </div>
 
       <AuthorCard />
 
-      {/* Gameplay Screenshots Section */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8 font-sans">
-        <div className="rounded-2xl overflow-hidden border border-purple-900/50 bg-[#080d19] p-4 flex flex-col items-center">
-          <Image
-            src="/images/sols-rng-hero.webp"
-            alt="Sol's RNG Official Roblox Gameplay Showcase and Aura Effects"
-            width={640}
-            height={360}
-            className="rounded-xl object-cover w-full h-56 border border-purple-950"
-            priority
-          />
-          <p className="text-xs text-gray-400 mt-3 text-center">
-            Figure 1: Sol's RNG Official Era 8.5 Live Server Environment and Biome Spawns.
-          </p>
-        </div>
-
-        <div className="rounded-2xl overflow-hidden border border-purple-900/50 bg-[#080d19] p-4 flex flex-col items-center">
-          <Image
-            src="/images/sols-rng-icon.webp"
-            alt="Sol's RNG Game Icon and Cosmic Aura Visual Emblem"
-            width={640}
-            height={360}
-            className="rounded-xl object-contain w-full h-56 bg-black/60 border border-purple-950"
-          />
-          <p className="text-xs text-gray-400 mt-3 text-center">
-            Figure 2: Official Sol's RNG Emblem — Cosmic particle dispersion and celestial rarity indicators.
-          </p>
-        </div>
-      </div>
-
-      {/* Strategic Overview & Mathematical Breakdown */}
-      <div className="p-6 sm:p-8 rounded-3xl bg-[#090f20] border border-purple-900/40 space-y-4 font-sans text-gray-300 text-sm leading-relaxed">
-        <h2 className="text-xl font-bold text-white flex items-center gap-2">
+      {/* Rarity Mechanics Explanation */}
+      <div className="p-6 sm:p-8 rounded-3xl bg-[#080d19] border border-purple-900/30 space-y-4 text-sm text-gray-300 font-sans leading-relaxed">
+        <h2 className="text-xl font-bold text-white flex items-center gap-2 font-mono">
           <Info className="w-5 h-5 text-purple-400" />
           The Science of Sol's RNG: How Rarity Tiers Function
         </h2>
@@ -182,7 +178,7 @@ export default function TierListPage() {
 
       {/* FAQ Section */}
       <div className="p-6 sm:p-8 rounded-3xl bg-[#080d19] border border-purple-900/40 space-y-6 font-sans">
-        <h2 className="text-xl font-bold text-white flex items-center gap-2">
+        <h2 className="text-xl font-bold text-white flex items-center gap-2 font-mono">
           <HelpCircle className="w-5 h-5 text-amber-400" />
           Aura Tier List Frequently Asked Questions
         </h2>
