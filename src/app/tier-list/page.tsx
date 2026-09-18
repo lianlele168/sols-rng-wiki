@@ -6,7 +6,7 @@ import { AURAS } from '@/data/wikiData';
 import AuthorCard from '@/components/AuthorCard';
 
 export const metadata: Metadata = {
-  title: "Sol's RNG Aura Tier List & Rarity Probabilities (September 2026)",
+  title: "Sol's RNG Aura Tier List & Rarity Probabilities ",
   description: "Official Sol's RNG aura tier list ranking Divine, Transcendent, and Mythic auras by base roll rarity, native biome requirements, and cutscene visual effects.",
   alternates: {
     canonical: '/tier-list',
@@ -77,7 +77,7 @@ export default function TierListPage() {
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'FAQPage',
-            dateModified: '2026-09-17',
+
             author: {
               '@type': 'Person',
               name: 'Kaelen "Chrono" Void',
@@ -105,7 +105,7 @@ export default function TierListPage() {
           Sol's RNG Aura Tier List & Base Odds
         </h1>
         <p className="text-gray-400 text-sm mt-1">
-          Complete breakdown of Divine, Transcendent, and Mythic auras ranked by statistical rarity, visual shader impact, and biome exclusivity (Updated September 2026).
+          Complete breakdown of Divine, Transcendent, and Mythic auras ranked by statistical rarity, visual shader impact, and biome exclusivity (Updated ).
         </p>
       </div>
 

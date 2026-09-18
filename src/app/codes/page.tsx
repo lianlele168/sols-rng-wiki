@@ -3,12 +3,12 @@ import type { Metadata } from 'next';
 import CodesClient from './CodesClient';
 
 export const metadata: Metadata = {
-  title: "Roblox Sol's RNG Codes (September 2026) - Free Potions & Lucky Coins",
-  description: "Full working list of active Roblox Sol's RNG codes for September 2026. Redeem free Lucky Potions, Speed Potions, and Stella crafting materials.",
+  title: "Roblox Sol's RNG Codes - Free Potions & Lucky Coins",
+  description: "Full working list of active Roblox Sol's RNG codes for . Redeem free Lucky Potions, Speed Potions, and Stella crafting materials.",
   alternates: {
     canonical: '/codes',
   },
-  keywords: ["sol's rng codes", "roblox sol's rng active codes", "sol's rng free potions", "sol's rng codes september 2026"],
+  keywords: ["sol's rng codes", "roblox sol's rng active codes", "sol's rng free potions", "sol's rng codes "],
 };
 
 export default function CodesPage() {

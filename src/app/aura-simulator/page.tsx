@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import AuraSimulatorClient from './AuraSimulatorClient';
 
 export const metadata: Metadata = {
-  title: "Roblox Sol's RNG Aura Roll Simulator (September 2026) | Heavenly Potion Odds",
+  title: "Roblox Sol's RNG Aura Roll Simulator | Heavenly Potion Odds",
   description: "Simulate rolling ultra-rare auras like Sovereign, Abyssal Hunter, and Impeached in Roblox Sol's RNG. Test Heavenly Potion II, Fortuna, and Galactic Gauntlet multiplier stacks.",
   alternates: {
     canonical: '/aura-simulator',

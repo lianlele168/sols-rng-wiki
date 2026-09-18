@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import CraftingCalculatorClient from './CraftingCalculatorClient';
 
 export const metadata: Metadata = {
-  title: "Sol's RNG Crafting Calculator: Heavenly Potions & Gauntlets (September 2026)",
+  title: "Sol's RNG Crafting Calculator: Heavenly Potions & Gauntlets ",
   description: "Calculate exact material costs for Stella's crafting bench in Roblox Sol's RNG. Determine potion ingredients, aura breakdown costs, and coin fees.",
   alternates: {
     canonical: '/crafting-calculator',

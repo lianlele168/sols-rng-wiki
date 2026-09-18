@@ -14,7 +14,7 @@ export default function AuthorCard({
   role = 'Lead RNG Statistician & Heavenly Potion Analyst',
   experience = '650+ Hours In-Game • 12M+ Verified Rolls',
   patchVersion = 'Era 8.5 Summer Patch Verified',
-  lastUpdated = 'September 2026',
+  lastUpdated = '',
   editorialNote = 'All drop fraction multipliers, Heavenly Potion II roll algorithms, and Biome weather timings are reverse-engineered directly from live server logs and community data packets.',
 }: AuthorCardProps) {
   return (
@@ -41,9 +41,7 @@ export default function AuthorCard({
           <span className="inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-medium bg-amber-500/10 text-amber-300 border border-amber-500/20">
             ⚡ {patchVersion}
           </span>
-          <span className="text-xs text-gray-400">
-            Updated: <strong className="text-gray-200">{lastUpdated}</strong>
-          </span>
+          
         </div>
       </div>
 

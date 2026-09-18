@@ -4,7 +4,7 @@ import EquipmentClient from './EquipmentClient';
 import { EQUIPMENT } from '@/data/wikiData';
 
 export const metadata: Metadata = {
-  title: "Sol's RNG Equipment & Gauntlet Stats Guide (September 2026)",
+  title: "Sol's RNG Equipment & Gauntlet Stats Guide ",
   description: "Full stats breakdown for all gauntlets and devices in Sol's RNG: Luck multipliers, roll speed reductions, and tier requirements from Solar to Galactic Gauntlet.",
   alternates: {
     canonical: '/equipment',

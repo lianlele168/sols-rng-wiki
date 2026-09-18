@@ -22,7 +22,7 @@ export default function CodesClient() {
           <span>DAILY VERIFIED REDEEM CODES</span>
         </div>
         <h1 className="text-3xl sm:text-5xl font-black text-white tracking-tight">
-          Roblox Sol's RNG Codes (September 2026)
+          Roblox Sol's RNG Codes 
         </h1>
         <p className="text-gray-400 text-sm mt-1">
           Claim free Heavenly Potions, Fortuna Potions, Lucky Potions, Speed Potions, and Coins. Tested daily.

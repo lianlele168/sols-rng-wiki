@@ -4,7 +4,7 @@ import BiomesClient from './BiomesClient';
 import { BIOMES } from '@/data/wikiData';
 
 export const metadata: Metadata = {
-  title: "Sol's RNG Biomes Guide: Weather Timers & Spawn Odds (September 2026)",
+  title: "Sol's RNG Biomes Guide: Weather Timers & Spawn Odds ",
   description: "Complete guide to Sol's RNG weather events and biomes: Starfall, Glitch, Null, Hell, and Corruption. Check active duration timers and exclusive aura spawners.",
   alternates: {
     canonical: '/biomes',
