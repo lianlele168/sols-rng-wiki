@@ -2,7 +2,7 @@ export interface CodeItem {
   code: string;
   rewards: string;
   status: 'active' | 'expired';
-  addedDate: string;
+  note?: string;
 }
 
 export interface AuraData {
@@ -64,44 +64,71 @@ export const GAME_INFO = {
 
 export const ACTIVE_CODES: CodeItem[] = [
   {
-    code: "UPDATE9.5",
-    rewards: "1x Heavenly Potion I, 5x Speed Potions, 5x Lucky Potions",
+    code: "SRY4DEALY",
+    rewards: "20x Potion Chests, 5x Rare Potion Chests, 3x Hwachae",
     status: "active",
-    addedDate: ""
+    note: "Some trackers list the third item as 3x Rainbow Ices instead of Hwachae."
   },
   {
-    code: "SUMMER2026",
-    rewards: "1x Heavenly Potion II, 5x Fortuna Potions, 5,000 Coins",
-    status: "active",
-    addedDate: ""
+    code: "UPD20260905",
+    rewards: "20x Potion Chests, 5x Rare Potion Chests",
+    status: "active"
   },
   {
-    code: "EON1.26",
-    rewards: "10x Lucky Potions, 10x Speed Potions",
+    code: "WEARESORRY",
+    rewards: "20x Potion Chests, 5x Rare Potion Chests",
     status: "active",
-    addedDate: ""
+    note: "Reported as still working by most trackers, but one source lists it as expired."
   },
   {
-    code: "SOVEREIGN",
-    rewards: "2,500 Coins, 2x Coin Boost (15m)",
+    code: "20260815UPD",
+    rewards: "20x Potion Chests, 5x Rare Potion Chests",
     status: "active",
-    addedDate: ""
-  },
-  {
-    code: "SOLSRNG",
-    rewards: "5x Lucky Potions Starter Pack",
-    status: "active",
-    addedDate: ""
+    note: "Reported as still working by most trackers, but one source lists it as expired."
   }
 ];
 
+const NOT_DOCUMENTED = "Expired — reward not documented by the publisher";
+
 export const EXPIRED_CODES: CodeItem[] = [
-  {
-    code: "SPRING_2025",
-    rewards: "3x Lucky Potions",
-    status: "expired",
-    addedDate: ""
-  }
+  { code: "SUMMER2026", rewards: "Free Potion Chests", status: "expired" },
+  { code: "BLAZINGSUN", rewards: "Free Potion Chests", status: "expired" },
+  { code: "20260711UPD", rewards: "Freebies", status: "expired" },
+  { code: "20260627UPD", rewards: "Free Potion Chests", status: "expired" },
+  { code: "2026013UPD", rewards: "Free Potion Chests", status: "expired" },
+  { code: "AmalgamationHELL", rewards: "Free Potion Chests", status: "expired" },
+  { code: "LastEasterEventWeek", rewards: "Free Potion Chests", status: "expired" },
+  { code: "AbsolutelyClassicUpd", rewards: "20x Potion Chests, 5x Rare Potion Chests", status: "expired" },
+  { code: "GargantuaBiome", rewards: "20x Potion Chests, 5x Rare Potion Chests", status: "expired" },
+  { code: "AnotherRealmCH2", rewards: NOT_DOCUMENTED, status: "expired" },
+  { code: "DorceyDorcey", rewards: NOT_DOCUMENTED, status: "expired" },
+  { code: "AAAAAAAA", rewards: NOT_DOCUMENTED, status: "expired" },
+  { code: "NOODLELUCKISREAL", rewards: NOT_DOCUMENTED, status: "expired" },
+  { code: "THISISNOTREAL", rewards: NOT_DOCUMENTED, status: "expired" },
+  { code: "RaidCH2", rewards: NOT_DOCUMENTED, status: "expired" },
+  { code: "UPD20260228", rewards: NOT_DOCUMENTED, status: "expired" },
+  { code: "word9999aura", rewards: NOT_DOCUMENTED, status: "expired" },
+  { code: "word999aura", rewards: NOT_DOCUMENTED, status: "expired" },
+  { code: "2026ValentineDay", rewards: NOT_DOCUMENTED, status: "expired" },
+  { code: "transform", rewards: NOT_DOCUMENTED, status: "expired" },
+  { code: "UPDATE20260117", rewards: NOT_DOCUMENTED, status: "expired" },
+  { code: "50kSUB", rewards: NOT_DOCUMENTED, status: "expired" },
+  { code: "ChristmasPart1!", rewards: NOT_DOCUMENTED, status: "expired" },
+  { code: "HoHoHo", rewards: NOT_DOCUMENTED, status: "expired" },
+  { code: "UPDATE DELAYED", rewards: NOT_DOCUMENTED, status: "expired" },
+  { code: "2026GETRAREAURA", rewards: NOT_DOCUMENTED, status: "expired" },
+  { code: "2026HAPPYNEWYEAR", rewards: NOT_DOCUMENTED, status: "expired" },
+  { code: "XMASPART2", rewards: NOT_DOCUMENTED, status: "expired" },
+  { code: "Patch20251224", rewards: NOT_DOCUMENTED, status: "expired" },
+  { code: "BlackFriday!!!", rewards: NOT_DOCUMENTED, status: "expired" },
+  { code: "PIXELSKILL", rewards: NOT_DOCUMENTED, status: "expired" },
+  { code: "profilespace", rewards: NOT_DOCUMENTED, status: "expired" },
+  { code: "Crawler", rewards: NOT_DOCUMENTED, status: "expired" },
+  { code: "Adventurer", rewards: NOT_DOCUMENTED, status: "expired" },
+  { code: "NEWFISH", rewards: NOT_DOCUMENTED, status: "expired" },
+  { code: "Manta2025", rewards: NOT_DOCUMENTED, status: "expired" },
+  { code: "bubble700", rewards: NOT_DOCUMENTED, status: "expired" },
+  { code: "TH3L1MB0", rewards: NOT_DOCUMENTED, status: "expired" }
 ];
 
 export const AURAS: AuraData[] = [

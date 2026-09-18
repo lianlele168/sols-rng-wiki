@@ -1,10 +1,13 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { Key, Copy, Check, ShieldCheck, Zap, HelpCircle } from 'lucide-react';
 import { ACTIVE_CODES, EXPIRED_CODES } from '@/data/wikiData';
 
-export default function CodesClient() {
+type Faq = { q: string; a: string };
+
+export default function CodesClient({ faqs }: { faqs: Faq[] }) {
   const [copiedCode, setCopiedCode] = useState<string | null>(null);
 
   const handleCopy = (code: string) => {
@@ -19,13 +22,14 @@ export default function CodesClient() {
       <div className="border-b border-purple-900/30 pb-6">
         <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-emerald-950/80 border border-emerald-800/50 text-emerald-300 text-xs font-bold mb-3">
           <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-          <span>DAILY VERIFIED REDEEM CODES</span>
+          <span>{ACTIVE_CODES.length} ACTIVE CODES — CHECKED AGAINST MULTIPLE TRACKERS</span>
         </div>
         <h1 className="text-3xl sm:text-5xl font-black text-white tracking-tight">
-          Roblox Sol's RNG Codes 
+          Roblox Sol's RNG Codes
         </h1>
         <p className="text-gray-400 text-sm mt-1">
-          Claim free Heavenly Potions, Fortuna Potions, Lucky Potions, Speed Potions, and Coins. Tested daily.
+          Active codes pay out in Potion Chests and Rare Potion Chests. Redeem them fast — most
+          Sol's RNG codes only survive a day or two.
         </p>
       </div>
 
@@ -42,12 +46,12 @@ export default function CodesClient() {
               key={idx}
               className="p-6 rounded-3xl bg-[#080d19] border border-emerald-900/40 space-y-4 flex flex-col justify-between"
             >
-              <div>
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-xl font-black text-amber-400">{item.code}</span>
-                  <span className="text-[10px] text-gray-500">{item.addedDate}</span>
-                </div>
+              <div className="space-y-2">
+                <span className="text-xl font-black text-amber-400 block">{item.code}</span>
                 <p className="text-sm font-semibold text-gray-200">{item.rewards}</p>
+                {item.note && (
+                  <p className="text-[11px] text-amber-300/80 leading-relaxed">{item.note}</p>
+                )}
               </div>
 
               <button
@@ -74,25 +78,70 @@ export default function CodesClient() {
       {/* How to Redeem Guide */}
       <div className="p-8 rounded-3xl bg-[#080d19] border border-purple-900/30 space-y-4">
         <h3 className="text-lg font-bold text-white flex items-center gap-2">
-          <HelpCircle className="w-5 h-5 text-amber-400" />
+          <Key className="w-5 h-5 text-amber-400" />
           <span>How to Redeem Codes in Roblox Sol's RNG</span>
         </h3>
         <ol className="space-y-3 text-xs text-gray-300 list-decimal list-inside leading-relaxed">
-          <li>Launch <strong>Sol's RNG</strong> from your Roblox application.</li>
-          <li>Look at the left side menu and click on the <strong>Codes / Settings</strong> gear icon.</li>
-          <li>Copy any active code from our list above and paste it into the input box.</li>
-          <li>Click <strong>Redeem</strong> to instantly claim your free Heavenly Potions & Coins!</li>
+          <li>Launch <strong>Sol's RNG</strong> from your Roblox application and skip the tutorial if it appears.</li>
+          <li>Click the <strong>three-line Menu button</strong> on the left side of the screen.</li>
+          <li>Go to <strong>Settings</strong>, then open the <strong>Miscellaneous</strong> tab.</li>
+          <li>Click <strong>Open</strong> next to <strong>Redeem Code</strong>.</li>
+          <li>Paste an active code into the box — codes are case sensitive — and press <strong>Redeem</strong>.</li>
         </ol>
+        <p className="text-xs text-gray-400 leading-relaxed">
+          A Lucky Potion grants +100% Luck for 60 seconds, so spend your chests right before a long
+          rolling session rather than piecemeal.
+        </p>
+      </div>
+
+      {/* FAQ */}
+      <div className="p-8 rounded-3xl bg-[#080d19] border border-purple-900/30 space-y-5">
+        <h3 className="text-lg font-bold text-white flex items-center gap-2">
+          <HelpCircle className="w-5 h-5 text-amber-400" />
+          <span>Sol's RNG Codes FAQ</span>
+        </h3>
+        <div className="space-y-4">
+          {faqs.map((f) => (
+            <div key={f.q}>
+              <h4 className="text-sm font-bold text-amber-300">{f.q}</h4>
+              <p className="text-xs text-gray-300 leading-relaxed mt-1">{f.a}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Internal links */}
+      <div className="p-8 rounded-3xl bg-[#080d19] border border-purple-900/30 space-y-3">
+        <h3 className="text-lg font-bold text-white">Codes Are Only Part of the Grind</h3>
+        <p className="text-xs text-gray-400 leading-relaxed">
+          Chests help, but your aura odds depend on where you roll and what you craft.
+        </p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+          <Link href="/tier-list" className="text-amber-300 hover:text-amber-200 font-semibold">
+            Aura Tier List — what is actually rare
+          </Link>
+          <Link href="/biomes" className="text-amber-300 hover:text-amber-200 font-semibold">
+            Biomes — where each aura can drop
+          </Link>
+          <Link href="/equipment" className="text-amber-300 hover:text-amber-200 font-semibold">
+            Equipment — luck boosts that stack
+          </Link>
+          <Link href="/crafting-calculator" className="text-amber-300 hover:text-amber-200 font-semibold">
+            Crafting Calculator — plan your gauntlet
+          </Link>
+        </div>
       </div>
 
       {/* Expired Codes Section */}
       <div className="space-y-4 pt-6 border-t border-slate-900">
-        <h3 className="text-sm font-bold text-gray-500">Expired Codes</h3>
+        <h3 className="text-sm font-bold text-gray-500">
+          Expired Codes ({EXPIRED_CODES.length}) — kept for reference
+        </h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 opacity-60">
           {EXPIRED_CODES.map((item, idx) => (
-            <div key={idx} className="p-3.5 rounded-xl bg-slate-900/40 border border-slate-800 flex justify-between text-xs">
-              <span className="line-through text-gray-400">{item.code}</span>
-              <span className="text-gray-500">{item.rewards}</span>
+            <div key={idx} className="p-3.5 rounded-xl bg-slate-900/40 border border-slate-800 flex justify-between text-xs gap-3">
+              <span className="line-through text-gray-400 shrink-0">{item.code}</span>
+              <span className="text-gray-500 text-right">{item.rewards}</span>
             </div>
           ))}
         </div>
