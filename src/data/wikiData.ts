@@ -184,10 +184,10 @@ export const AURAS: AuraData[] = [
   {
     id: "gargantua",
     name: "Gargantua",
-    rarityFraction: "1 in 43,000,000",
-    rarityDenominator: 43000000,
+    rarityFraction: "1 in 430,000,000",
+    rarityDenominator: 430000000,
     biomeExclusive: "Starfall",
-    biomeRarityFraction: "1 in 10,000,000",
+    biomeRarityFraction: "1 in 100,000,000",
     tier: "S",
     description: "Massive black hole gravitational singularity pulling nearby light and dust into its event horizon.",
     visualEffect: "Black Hole Singularity + Gravitational Lens"
@@ -275,7 +275,7 @@ export const BIOMES: BiomeData[] = [
     spawnChance: "1 in 7,500 rolls",
     durationSec: 120,
     icon: "⭐",
-    exclusiveAuras: ["Gargantua (1/10M in Starfall vs 1/43M normal)", "Comet (1/12k)"],
+    exclusiveAuras: ["Gargantua (1/100M in Starfall vs 1/430M normal)", "Comet (1/12k)"],
     luckMultiplierNote: "Night sky fills with shooting stars. Gives 4.3x multiplier for Gargantua."
   },
   {
