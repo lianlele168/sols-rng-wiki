@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     "Sovereign aura",
     "Galactic Gauntlet craft"
   ],
-  authors: [{ name: 'Roblox Wiki Hub' }],
+  authors: [{ name: 'Hlele' }],
   metadataBase: new URL('https://solsrng.robloxwikihub.com'),
   openGraph: {
     title: "Roblox Sol's RNG Wiki & Database 2026",

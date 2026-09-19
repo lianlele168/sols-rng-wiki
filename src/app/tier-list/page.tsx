@@ -80,8 +80,8 @@ export default function TierListPage() {
 
             author: {
               '@type': 'Person',
-              name: 'Kaelen "Chrono" Void',
-              jobTitle: 'Lead RNG Statistician & Heavenly Potion Analyst',
+              name: 'Hlele',
+              jobTitle: 'Editor',
             },
             mainEntity: TIER_LIST_FAQS.map((faq) => ({
               '@type': 'Question',

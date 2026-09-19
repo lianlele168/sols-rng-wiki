@@ -79,8 +79,8 @@ export default function HomeClient() {
 
             author: {
               '@type': 'Person',
-              name: 'Kaelen "Chrono" Void',
-              jobTitle: 'Lead RNG Statistician & Heavenly Potion Analyst',
+              name: 'Hlele',
+              jobTitle: 'Editor',
             },
             mainEntity: FAQ_ITEMS.map((faq) => ({
               '@type': 'Question',

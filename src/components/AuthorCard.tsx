@@ -10,12 +10,12 @@ interface AuthorCardProps {
 }
 
 export default function AuthorCard({
-  authorName = 'Kaelen "Chrono" Void',
-  role = 'Lead RNG Statistician & Heavenly Potion Analyst',
-  experience = '650+ Hours In-Game • 12M+ Verified Rolls',
+  authorName = 'Hlele',
+  role = 'Editor',
+  experience = 'AI-assisted research, human-reviewed',
   patchVersion = 'Era 8.5 Summer Patch Verified',
   lastUpdated = '',
-  editorialNote = 'All drop fraction multipliers, Heavenly Potion II roll algorithms, and Biome weather timings are reverse-engineered directly from live server logs and community data packets.',
+  editorialNote = 'All data is cross-verified from multiple sources; unverified values are explicitly labeled.',
 }: AuthorCardProps) {
   return (
     <div className="w-full rounded-2xl bg-[#080d19]/90 border border-purple-900/50 p-4 sm:p-5 backdrop-blur-md my-6 shadow-xl font-sans">
