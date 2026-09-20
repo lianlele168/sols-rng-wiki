@@ -58,7 +58,7 @@ export default function HomeClient() {
       badge: "EQUIPMENT"
     },
     {
-      title: "Verified Active Redeem Codes",
+      title: "Active Redeem Codes",
       desc: "100% working Roblox Sol's RNG free Heavenly Potions, Fortuna Potions, Lucky Potions, and Coins.",
       href: "/codes",
       icon: Key,
